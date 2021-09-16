@@ -1,0 +1,1 @@
+SELECT passwords FROM users WHERE passwords= $1

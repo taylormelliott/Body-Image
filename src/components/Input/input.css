@@ -1,0 +1,24 @@
+.input {
+    display: flex;
+    
+    
+}
+
+.input form {
+    
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+/* .input form input {
+    margin: 10px;
+} */
+
+.min-height {
+    min-height: 730px;
+}
+
+   

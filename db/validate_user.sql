@@ -1,0 +1,1 @@
+SELECT id, gender FROM users WHERE email = $1 AND passwords = $2
