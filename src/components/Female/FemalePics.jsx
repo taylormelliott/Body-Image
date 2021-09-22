@@ -26,24 +26,35 @@ export default class FemalePics extends Component {
 
         return (
             <div>
+                <div className='button justify-content-center'>
+                    <Link to='/'>Home</Link>
+                </div>
 
                 <h1>Pick Your Desired Look</h1>
-                <Link  to={{ 
-                        pathname: "/input", 
-                        state: this.state.bodyFat12,
-                        id: this.props.location.state
-                        }} ><img src={female12} alt="" /></Link>
+                
 
-                <Link to={{
-                        pathname: '/input',
-                        state: this.state.bodyFat15,
-                        id: this.props.location.state
-                        }} ><img src={female15} alt="" /></Link>
-                <Link to={{
-                        pathname: '/input',
-                        state: this.state.bodyFat25,
-                        id: this.props.location.state
-                        }} ><img src={female25} alt="" /></Link>
+                <div class='d-flex p-2 justify-content-center'>
+
+                    <Link  to={{ 
+                            pathname: "/input", 
+                            state: this.state.bodyFat12,
+                            id: this.props.location.state
+                            }} ><div class='bg-image hover-zoom'><img class="img-fluid rounded" src={female12} alt="" /></div></Link>
+
+                    <Link to={{
+                            pathname: '/input',
+                            state: this.state.bodyFat15,
+                            id: this.props.location.state
+                            }} ><div class='bg-image hover-zoom'><img class="img-fluid rounded" src={female15} alt="" /></div></Link>
+                    <Link to={{
+                            pathname: '/input',
+                            state: this.state.bodyFat25,
+                            id: this.props.location.state
+                            }} ><div class='bg-image hover-zoom'><img class="img-fluid rounded" src={female25} alt="" /></div></Link>
+
+                </div>
+                
+                
                 
             </div>
         )

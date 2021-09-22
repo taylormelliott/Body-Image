@@ -48,7 +48,7 @@ export default class App extends Component {
     
     return (
       
-      <div className ="container">
+      <div className ="container d-flex flex-column justify-content-center text-center ">
         
        <Switch>
         <Route exact path='/' render={(props) => <Homepage {...props} id ={this.state.id} gender ={this.state.gender} handleId = {this.handleId} handleGender = {this.handleGender} />} />

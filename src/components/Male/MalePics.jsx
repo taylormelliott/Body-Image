@@ -28,26 +28,31 @@ export default class MalePics extends Component {
         
 
         return (
-            <div  >
-                <div className='button'>
-          <Link to='/'>Home</Link>
-        </div>
+            <div >
+                <div className='button justify-content-center'>
+                    <Link to='/'>Home</Link>
+                </div>
                 <h1>Pick Your Desired Look</h1>
-                <Link  to={{ 
-                        pathname: "/input", 
-                        state: this.state.bodyFat7,
-                        
-                        }} ><img  class="img-fluid" src={male7} alt="" /></Link>
-                <Link to={{
-                        pathname:'/input',
-                        state:this.state.bodyFat15,
-                        
-                        }} ><img class="img-fluid" src={male15} alt="" /></Link>
-                <Link to={{
-                        pathname: '/input',
-                        state: this.state.bodyFat25,
-                        
-                        }}><img class="img-fluid" src={male25} alt="" /></Link>
+                <div class='d-flex p-2 justify-content-center' >
+
+                    <Link   to={{ 
+                            pathname: "/input", 
+                            state: this.state.bodyFat7,
+                            
+                            }} > <div class='bg-image hover-zoom'><img  class="img-fluid rounded" src={male7} alt="" /></div></Link>
+                    <Link to={{
+                            pathname:'/input',
+                            state:this.state.bodyFat15,
+                            
+                            }} ><div class='bg-image hover-zoom'><img class="img-fluid rounded" src={male15} alt="" /></div></Link>
+                    <Link to={{
+                            pathname: '/input',
+                            state: this.state.bodyFat25,
+                            
+                            }}> <div class='bg-image hover-zoom'><img class="img-fluid rounded" src={male25} alt="" /></div> </Link>
+
+                </div>
+                
             </div>
         )
     }

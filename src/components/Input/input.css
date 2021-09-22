@@ -21,4 +21,21 @@
     min-height: 730px;
 }
 
+.box-width {
+    width: auto ;
+    height: 500px;
+    
+
+}
+
+.result-width{
+    width: 500px;
+    height: 500px;
+}
+
+.title-width {
+    width: 592px;
+    height: auto
+}
+
    

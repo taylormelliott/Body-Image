@@ -48,7 +48,7 @@ export default class LogList extends Component {
         return (
             <div class="d-flex justify-content-center">
                 <div >
-                    <h1>Progress Logs</h1>
+                    
 
                     <div >
                         {this.state.logs.map((element) => {

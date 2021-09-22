@@ -69,6 +69,8 @@ export default class Homepage extends Component {
         console.log(this.state.hidden)
         return (
             <div className='center shimmer'>
+                
+
                 <h1 >Body Image</h1> 
                 <div className='buttons'>
 
@@ -98,6 +100,11 @@ export default class Homepage extends Component {
                 <Login  handleId = {this.props.handleId} hidden = {this.toggleHidden} />
 
                 {this.state.hidden && <p>You have successfully logged in! Click Male or Female buttons to continue</p>}
+                    
+                
+
+
+                
                 
                 
             </div>

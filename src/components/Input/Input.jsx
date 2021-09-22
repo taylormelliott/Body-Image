@@ -110,7 +110,7 @@ let newdate = month + "/" + day + "/" + year;
         const totalCals = tdee()
 
         function bodyFatCalc() {
-        return(`You need to eat ${totalCals} per day to reach your goal of ${Math.floor(goalBodyFat * 100)}%. Aim to lose 1% of your weight per week. It will take ${weeksToGoal} weeks to achieve your goal. You will weight ${goalWeight}lbs and have lost ${totalFatLost} lbs of fat if no muscle mass was lost or gained in the process. It's common to lose or gain some muscle when cutting calories depending on exercise experience. This result should be taken as best case scenario.`)
+        return(`You need to eat ${totalCals} calories per day to reach your goal of ${Math.floor(goalBodyFat * 100)}%. Aim to lose 1% of your weight per week. It will take ${weeksToGoal} weeks to achieve your goal. You will weight ${goalWeight}lbs and have lost ${totalFatLost} lbs of fat if no muscle mass was lost or gained in the process. It's common to lose or gain some muscle when cutting calories depending on exercise experience. This result should be taken as best case scenario.`)
         
 
 }
@@ -150,13 +150,13 @@ let newdate = month + "/" + day + "/" + year;
             <div className="min-height"  >
                         
                 
-                <div >
+                <div>
                         
                     
                     
 
-                    <form  onSubmit={this.handleForm}>
-                        <div className='button'>
+                    <form   onSubmit={this.handleForm}>
+                        <div className='button justify-content-center'>
                             <Link to='/'>Home</Link>
                         </div>
                         <div class="mb-3">
@@ -175,10 +175,24 @@ let newdate = month + "/" + day + "/" + year;
 
                 </div>
 
-                <div >
-                    <div >
-                        <div ><LogList  id = {this.props.id} /></div>
-                        <div class="text-wrap"><h1>{this.state.result}</h1></div>
+                
+                <div className='title-width'>
+                <h1>Progress Logs</h1>
+                
+                </div>
+                
+                
+                <div class='container' >
+                
+                    <div class='row align-items-center' >
+                    
+                        <div class='col box-width overflow-scroll'>
+                        
+                            
+                            <LogList id = {this.props.id} />
+                        
+                        </div>
+                        <div class='col' className='result-width'><h1>{this.state.result}</h1></div>
                     </div>
                 </div>
 
