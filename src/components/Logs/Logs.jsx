@@ -10,7 +10,8 @@ export default class Logs extends Component {
         this.state = {
             weight_logs: 0,
             body_fat_logs: 0,
-            isHidden: true
+            isHidden: true,
+            
         }
 
         this.handleDelete = this.handleDelete.bind(this)
@@ -56,9 +57,15 @@ export default class Logs extends Component {
 
     onSubmit(e) {
         e.preventDefault()
+
+        this.props.toggleAlert()
+
+        this.setState({ showAlert: !this.state.showAlert})
         axios.put(`/results/edit/${this.props.id}`, {
             weight_logs: this.state.weight_logs,
             body_fat_logs: this.state.body_fat_logs
+
+            
 
         }
         
@@ -71,11 +78,15 @@ export default class Logs extends Component {
           });
 
           
+
+          
     }
 
     
 
     handleDelete() {
+        
+        this.props.toggleDeleteAlert()
         axios.delete(`/results/${this.props.id}`
             
         )
@@ -86,7 +97,7 @@ export default class Logs extends Component {
           });
     }
 
-    
+   
 
     
 
@@ -100,7 +111,8 @@ export default class Logs extends Component {
                 <h4>Body Fat: {this.props.bodyFat * 100}%</h4>
                 <h4>{this.props.date}</h4>
 
-                <div class="d-grid gap-2 d-md-block" >
+                <div>
+
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Edit
                     </button>
@@ -119,19 +131,69 @@ export default class Logs extends Component {
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button onClick= {this.onSubmit} type="button" class="btn btn-primary">Save changes</button>
+                            <button onClick= {this.onSubmit} type="button" data-bs-dismiss="modal" class="btn btn-primary">Save changes</button>
+                            
                         </div>
                         </div>
                     </div>
                     </div>
 
+                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                    Delete
+                    </button>
+
+
+                    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Confirm Delete</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Are you sure you want to Delete?</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button>
+                            <button onClick= {this.handleDelete} type="button" data-bs-dismiss="modal" class="btn btn-success">Yes</button>
+                            
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                    
+
+                    
+
+                    
+
+                    
+                        
+                        
+
+                    
+                         
+                    
+                              
                                     
-                                    {/* <button  onClick= {this.toggleHidden}>Edit</button>
-                                    {!this.state.isHidden && <Edit id = {this.props.id} hidden = {this.hiddenTrue} />} */}
 
-                                    <button type="button" class="btn btn-danger" onClick= {this.handleDelete}>Delete</button>
+                                    {/* <button type="button" class="btn btn-danger" onClick= {this.handleDelete}>Delete</button> */}
 
                 </div>
+
+
+
+                
+
+                
+
+               
+
+                
+
+                
+
+                
 
                 
                     

@@ -29,12 +29,16 @@
 }
 
 .result-width{
-    width: 500px;
+    width: 648px;
     height: 500px;
+    
+}
+.result-width h1{
+    font-size: x-large;
 }
 
 .title-width {
-    width: 592px;
+    width: 624px;
     height: auto
 }
 

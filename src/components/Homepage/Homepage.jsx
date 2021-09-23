@@ -13,12 +13,16 @@ export default class Homepage extends Component {
             maleBtn: 'male',
             femaleBtn: 'female',
             hidden: false,
-            hideRegister: false
+            hideRegister: false,
+            hideRegisterBox: true,
+            hideLoginBox: true
         }
         this.handleMale = this.handleMale.bind(this)
         this.handleFemale = this.handleFemale.bind(this)
         this.toggleHidden = this.toggleHidden.bind(this)
         this.toggleHideRegister = this.toggleHideRegister.bind(this)
+        this.toggleHideRegisterBox = this.toggleHideRegisterBox.bind(this)
+        this.toggleHideLoginBox = this.toggleHideLoginBox.bind(this)
     }
 
     handleFemale() {
@@ -59,6 +63,29 @@ export default class Homepage extends Component {
         this.setState({ hideRegister: true})
     }
 
+    toggleHideRegisterBox() {
+        this.setState({ hideRegisterBox: !this.state.hideRegisterBox})
+        this.setState({ hideLoginBox: true})
+    }
+
+    toggleHideLoginBox() {
+        this.setState({ hideLoginBox: !this.state.hideLoginBox})
+        this.setState({ hideRegisterBox: true})
+    }
+
+    toggleComponent(name) {
+        console.log(name)
+        switch (name) {
+            case "hideRegisterBox":
+                this.setState({ hideRegisterBox: false})
+                break;
+            case "hideLoginBox":
+                this.setState({hideLoginBox: false})
+                break;
+                default:
+        }
+    }
+
 
 
 // when button is clicked, post a 'male' or 'female' status by user id to users table under the column 'gender' after account created
@@ -90,14 +117,20 @@ export default class Homepage extends Component {
 
                 <h4>Want to save your results?</h4>
                 
-
-
+                <div class='d-flex'>
+                    <button onClick= {this.toggleHideRegisterBox} type='button' className='btn btn-link'>Register</button>
+                    <button onClick= {this.toggleHideLoginBox } type='button' className='btn btn-link'>Log In</button>
+                </div>
                 
-                <Register id = {this.props.id} gender = {this.props.gender} hidden = {this.toggleHideRegister}/>
-                {this.state.hideRegister && <p>You're Registered! Now Log in below!</p> }
-
                 
-                <Login  handleId = {this.props.handleId} hidden = {this.toggleHidden} />
+
+                {!this.state.hideRegisterBox && <Register id = {this.props.id} gender = {this.props.gender} hidden = {this.toggleHideRegister}/>}
+                
+                
+                {this.state.hideRegister && <p>You're Registered! Now Click the Log In button!</p> }
+
+                {!this.state.hideLoginBox && <Login  handleId = {this.props.handleId} hidden = {this.toggleHidden} /> }
+                
 
                 {this.state.hidden && <p>You have successfully logged in! Click Male or Female buttons to continue</p>}
                     

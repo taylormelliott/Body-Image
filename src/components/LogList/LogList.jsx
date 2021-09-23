@@ -53,7 +53,7 @@ export default class LogList extends Component {
                     <div >
                         {this.state.logs.map((element) => {
                             
-                           return <Logs key = {element.id} id={element.id} weight = {element.weight_logs} bodyFat = {element.body_fat_logs} date= {element.date_logs} />
+                           return <Logs key = {element.id} id={element.id} weight = {element.weight_logs} bodyFat = {element.body_fat_logs} date= {element.date_logs} toggleAlert={this.props.toggleAlert} toggleDeleteAlert= {this.props.toggleDeleteAlert} />
                            
                             
                         })}

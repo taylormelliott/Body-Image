@@ -51,9 +51,9 @@ export default class Login extends Component {
                 <div>
                     <h3>Login</h3>
                     <form onSubmit={this.handleSubmit}>
-                        <input value= {this.state.email} type="email"  placeholder='email...' required onChange={(e) => {this.handleEmail(e.target.value)}} />
-                        <input value= {this.state.passwords} type="password" placeholder='password' required onChange={(e) => {this.handlePassword(e.target.value)}} />
-                        <button onClick ={this.props.hidden}>Log In</button>
+                        <input class="form-control" value= {this.state.email} type="email"  placeholder='email...' required onChange={(e) => {this.handleEmail(e.target.value)}} />
+                        <input class="form-control" value= {this.state.passwords} type="password" placeholder='password' required onChange={(e) => {this.handlePassword(e.target.value)}} />
+                        <button type="submit" class="btn btn-primary" onClick ={this.props.hidden}>Log In</button>
                     </form>
                 </div>
                 

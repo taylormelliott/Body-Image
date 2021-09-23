@@ -12,12 +12,16 @@ export default class Input extends Component {
             weightInput: 0,
             bodyFatInput: 0,
             result: '',
-            logs: []
+            logs: [],
+            showAlert: true, 
+            showDeleteAlert: true
             
 
             
         }
         this.handleForm = this.handleForm.bind(this)
+        this.toggleAlert = this.toggleAlert.bind(this)
+        this.toggleDeleteAlert = this.toggleDeleteAlert.bind(this)
     }
 
     //make an axios call to the results table returning everything by user_id
@@ -134,12 +138,15 @@ let newdate = month + "/" + day + "/" + year;
 
     }
 
-    //on submit launch a post request to the results table 'weight_logs','body_fat_logs' searching by user_id. Should automatically store the current date in the 'date_logs' column in the results table upon submit.
-                //if the user is logged in, there should be a get request displaying all the 'weight_logs', body_fat_logs', and 'date_logs' from the results table in the input component 
-                //if the user is logged in, there should be a delete request associated with a delete button to the right of each log
-                //if the user is logged in, there should be a put request associated with an edit button to the right of each log that updates all 3 aspects of a log(weight, bodyfat, and date)
-                
-//build out Logs table. Loglist will be a componenent child of input and render out Log as a child componenet which will display weight, current body fat, and date from the user
+    toggleAlert() {
+        this.setState({ showAlert: !this.state.showAlert})
+        setTimeout(() => {this.setState({ showAlert: !this.state.showAlert})}, 3000)
+    }
+
+    toggleDeleteAlert() {
+        this.setState({ showDeleteAlert: !this.state.showDeleteAlert})
+        setTimeout(() => {this.setState({ showDeleteAlert: !this.state.showDeleteAlert})}, 3000)
+    }
     
     
 
@@ -175,8 +182,24 @@ let newdate = month + "/" + day + "/" + year;
 
                 </div>
 
+                <div class='m-2'>
+
+                {!this.state.showAlert && <div class="alert alert-success" role="alert">
+                Changes Saved!
+                </div> }
+
+                </div>
+
+                <div class='m-2'>
+                    {!this.state.showDeleteAlert && <div class="alert alert-danger" role="alert">
+                    Log Deleted!
+                    </div> }
+                </div>
+
                 
-                <div className='title-width'>
+
+                
+                <div className='title-width d-flex justify-content center'>
                 <h1>Progress Logs</h1>
                 
                 </div>
@@ -189,7 +212,7 @@ let newdate = month + "/" + day + "/" + year;
                         <div class='col box-width overflow-scroll'>
                         
                             
-                            <LogList id = {this.props.id} />
+                            <LogList id = {this.props.id} toggleAlert = {this.toggleAlert} toggleDeleteAlert = {this.toggleDeleteAlert} />
                         
                         </div>
                         <div class='col' className='result-width'><h1>{this.state.result}</h1></div>
