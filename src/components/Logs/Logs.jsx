@@ -127,7 +127,7 @@ export default class Logs extends Component {
                         </div>
                         <div class="modal-body">
                         <input type="text" className="form-control" placeholder="Edit Weight" onChange={(e) => {this.handleWeight(e.target.value)}}/>
-                        <input type="text" className="form-control" placeholder="Edit Body Fat" onChange={(e) => {this.handleBodyFat(e.target.value)}}/>
+                        <input type="text" className="form-control" placeholder="Edit Body Fat (Enter as a decimal Ex.35% ENTER AS '.35')" onChange={(e) => {this.handleBodyFat(e.target.value)}}/>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

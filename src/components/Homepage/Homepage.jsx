@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import Login from '../Login'
 import Register from '../Register'
+import Video from '../video/backgroundVideo.mp4'
 import './homepage.css'
 
 export default class Homepage extends Component {
@@ -96,6 +97,20 @@ export default class Homepage extends Component {
         console.log(this.state.hidden)
         return (
             <div className='center shimmer'>
+
+                <video autoPlay loop src={Video} style={{
+                    position: 'absolute',
+                    width: '100%',
+                    left: '50%',
+                    top: '50%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    transform: 'translate( -50% , -50%)',
+                    zIndex: '-1'
+
+                }}>
+
+                </video>
                 
 
                 <h1 >Body Image</h1> 

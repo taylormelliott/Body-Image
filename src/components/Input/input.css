@@ -4,6 +4,10 @@
     
 }
 
+label {
+    color: #4f4f4f !important;
+}
+
 .input form {
     
     display:flex;
