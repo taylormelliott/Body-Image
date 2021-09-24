@@ -6,7 +6,7 @@ require("dotenv").config();
 const usersCtrl = require('./usersController')
 const session = require('express-session')
 
-const {SERVER_PORT, SESSION_SECRET, CONNECTION_STRING} = process.env;
+const {PORT, SESSION_SECRET, CONNECTION_STRING} = process.env;
 
 
 
@@ -47,7 +47,7 @@ massive({
     app.set("db", db);
     console.log("db ready!");
 
-    app.listen(SERVER_PORT, console.log(`RUNNING @ PORT ${SERVER_PORT}`));
+    app.listen(PORT, console.log(`RUNNING @ PORT ${PORT}`));
   });
 
 
