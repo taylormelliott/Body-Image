@@ -19,7 +19,7 @@ app.use(
       cookie: { maxAge: 1000 * 60 * 60 * 24 },
   })
 )
-app.use(express.static(`${__dirname}/../build`)) //serving our build folder
+app.use(express.static(`${__dirname}/../client/build`)) //serving our build folder
 
 app.get('/results/:user_id', resultCtrl.getResultsById)
 app.post('/results/add', resultCtrl.addResultsById)
