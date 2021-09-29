@@ -5,6 +5,7 @@ const resultCtrl = require('./resultsController')
 require("dotenv").config();
 const usersCtrl = require('./usersController')
 const session = require('express-session')
+const path = require ('path')
 
 const {PORT, SESSION_SECRET, CONNECTION_STRING} = process.env;
 
@@ -20,9 +21,7 @@ app.use(
   })
 )
 app.use(express.static(`${__dirname}../client/build`)) //serving our build folder
-app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
-});
+
 
 app.get('/results/:user_id', resultCtrl.getResultsById)
 app.post('/results/add', resultCtrl.addResultsById)
@@ -40,6 +39,10 @@ app.post('/users/login', usersCtrl.getLogIn)
 //app.get for session
 // app.get('/users/session', usersCtrl.getSession)
 //app.delete for session
+
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
+});
 
 
 

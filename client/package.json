@@ -17,8 +17,6 @@
     "express": "^4.17.1",
     "express-session": "^1.17.2",
     "massive": "^6.10.0",
-    "mdb-react-ui-kit": "^1.4.0",
-    "mdb-ui-kit": "^3.9.0",
     "nodemon": "^2.0.12",
     "pg": "^8.7.1",
     "pg-hstore": "^2.3.4",
