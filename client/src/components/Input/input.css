@@ -1,0 +1,49 @@
+.input {
+    display: flex;
+    
+    
+}
+
+label {
+    color: #4f4f4f !important;
+}
+
+.input form {
+    
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+/* .input form input {
+    margin: 10px;
+} */
+
+.min-height {
+    min-height: 730px;
+}
+
+.box-width {
+    width: auto ;
+    height: 500px;
+    
+
+}
+
+.result-width{
+    width: 648px;
+    height: 500px;
+    
+}
+.result-width h1{
+    font-size: x-large;
+}
+
+.title-width {
+    width: 624px;
+    height: auto
+}
+
+   
