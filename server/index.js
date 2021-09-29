@@ -20,6 +20,9 @@ app.use(
   })
 )
 app.use(express.static(`${__dirname}/../client/build`)) //serving our build folder
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
+});
 
 app.get('/results/:user_id', resultCtrl.getResultsById)
 app.post('/results/add', resultCtrl.addResultsById)
