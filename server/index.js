@@ -19,8 +19,8 @@ app.use(
       cookie: { maxAge: 1000 * 60 * 60 * 24 },
   })
 )
-app.use(express.static(`${__dirname}/../client/build`)) //serving our build folder
-app.get('/', (req, res) => {
+app.use(express.static(`${__dirname}../client/build`)) //serving our build folder
+app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
 });
 
